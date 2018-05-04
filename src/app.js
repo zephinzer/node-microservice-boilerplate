@@ -4,9 +4,7 @@ module.exports = microserviceBoilerplate;
  * Returns an Express.js server provisioned with some
  * basic stuff
  */
-function microserviceBoilerplate({
-  configuration
-}) {
+function microserviceBoilerplate() {
   const express = require('express');
   const cookieParser = require('cookie-parser');
 
