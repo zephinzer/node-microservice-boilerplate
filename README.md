@@ -3,6 +3,8 @@
 ## What's In This
 
 - [x] express
+- [x] cookie parser
+- [ ] body parser
 - [ ] helmet for http header security
 - [ ] cors for cross-origin-resource-sharing
 - [ ] prometheus metrics monitoring

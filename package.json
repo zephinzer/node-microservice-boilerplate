@@ -1,6 +1,6 @@
 {
   "name": "@govtechsg/microservice-boilerplate",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "Microservice boilerplate",
   "main": "./src/app.js",
   "scripts": {

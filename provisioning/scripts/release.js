@@ -17,6 +17,7 @@ writeFileSync(
   )
 );
 
+console.info(`publishing ${packageJson.name}@${nextVersion} to NPM...`);
 const publish = exec('npm publish --access public');
 publish.stdout.on('data', (data) => {
   process.stdout.write(data);
@@ -25,17 +26,5 @@ publish.stderr.on('data', (data) => {
   process.stderr.write(data);
 });
 publish.on('exit', (exitCode) => {
-  console.error(`"npm publish" exited with status code ${exitCode}`);
-  if (exitCode == 0) {
-    const versionBump = exec(`git stash && git add package.json && git commit --message='version bump to ${nextVersion}' && git stash pop`);
-    versionBump.stdout.on('data', (data) => {
-      process.stdout.write(data);
-    });
-    versionBump.stderr.on('data', (data) => {
-      process.stderr.write(data);
-    });
-    versionBump.on('exit', (exitCode) => {
-      console.error(`"git add" exited with status code ${exitCode}`);
-    });
-  }
+  console.info(`"npm publish" exited with status code ${exitCode}.`);
 });
